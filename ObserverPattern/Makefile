@@ -6,7 +6,7 @@
 #    By: ytsyrend <ytsyrend@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/05 18:06:28 by ytsyrend          #+#    #+#              #
-#    Updated: 2025/08/08 17:57:38 by ytsyrend         ###   ########.fr        #
+#    Updated: 2025/08/08 17:57:41 by ytsyrend         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC_DIRS 	= 	srcs
 
 MAIN 		= 	$(SRC_DIRS)/main.cpp
 TEST 		= 	$(SRC_DIRS)/tests.cpp
-COMMON_SRCS =	$(SRC_DIRS)/ADuck.class.cpp $(SRC_DIRS)/MallardDuck.class.cpp $(SRC_DIRS)/RedheadDuck.class.cpp $(SRC_DIRS)/RubberDuck.class.cpp $(SRC_DIRS)/Decoy.class.cpp $(SRC_DIRS)/IFlyable.class.cpp $(SRC_DIRS)/IQuackable.class.cpp $(SRC_DIRS)/FlyWithWings.class.cpp $(SRC_DIRS)/FlyWithoutWings.class.cpp $(SRC_DIRS)/RubberDuck.class.cpp $(SRC_DIRS)/Decoy.class.cpp $(SRC_DIRS)/IFlyable.class.cpp $(SRC_DIRS)/IQuackable.class.cpp $(SRC_DIRS)/FlyWithWings.class.cpp $(SRC_DIRS)/FlyWithoutWings.class.cpp $(SRC_DIRS)/RubberDuck.class.cpp $(SRC_DIRS)/Decoy.class.cpp $(SRC_DIRS)/IFlyable.class.cpp $(SRC_DIRS)/IQuackable.class.cpp $(SRC_DIRS)/FlyWithWings.class.cpp $(SRC_DIRS)/FlyWithoutWings.class.cpp $(SRC_DIRS)/RubberDuck.class.cpp $(SRC_DIRS)/Decoy.class.cpp $(SRC_DIRS)/IFlyable.class.cpp $(SRC_DIRS)/IQuackable.class.cpp $(SRC_DIRS)/Quack.class.cpp $(SRC_DIRS)/Squeak.class.cpp $(SRC_DIRS)/MuteQuack.class.cpp
+COMMON_SRCS =   $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp))
 
 # Source and Object Files
 SRCS 		= 	$(COMMON_SRCS) $(MAIN)
@@ -87,3 +87,4 @@ RESET_COLOR=\033[0m
 
 .PHONY : clean fclean re all bonus
 
+re: fclean all
